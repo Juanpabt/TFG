@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito · Barber O.R.Z Studio</title>
+    <link rel="icon" type="image/jpeg" href="../img/Barberia Logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/carrito.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="../img/Barberia Logo.jpeg" alt="Logo">
+        <span>Barber O.R.Z</span>
+    </a>
+    <a href="index.html" class="back-link">← Volver a la tienda</a>
+</nav>
+
+<main>
+    <!-- CABECERA -->
+    <div class="page-header">
+        <span class="section-label">Tu selección</span>
+        <h1 class="page-title">Carrito de Compra</h1>
+        <div class="section-line"></div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="carrito-layout">
+
+        <!-- LISTA DE PRODUCTOS -->
+        <div class="carrito-items" id="carritoItems">
+            <!-- Se rellena con JS -->
+        </div>
+
+        <!-- RESUMEN LATERAL -->
+        <div class="carrito-resumen">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <h2 class="resumen-title">Resumen</h2>
+
+            <div class="resumen-row">
+                <span>Productos</span>
+                <span id="resumenCantidad">0</span>
+            </div>
+            <div class="resumen-row">
+                <span>Subtotal</span>
+                <span id="resumenSubtotal">0.00€</span>
+            </div>
+            <div class="resumen-row resumen-total">
+                <span>Total</span>
+                <span id="resumenTotal">0.00€</span>
+            </div>
+
+            <div class="msg error"   id="errorMsg"></div>
+            <div class="msg success" id="successMsg"></div>
+
+            <button class="btn-comprar" id="btnComprar">Finalizar compra</button>
+            <a href="index.html#productos" class="btn-seguir">← Seguir comprando</a>
+        </div>
+
+    </div>
+
+    <!-- CARRITO VACÍO -->
+    <div class="carrito-vacio hidden" id="carritoVacio">
+        <span class="vacio-icon">🛒</span>
+        <h2>Tu carrito está vacío</h2>
+        <p>Añade productos desde nuestra tienda</p>
+        <a href="index.html#productos" class="btn-comprar">Ver productos</a>
+    </div>
+
+</main>
+
+<script src="../js/carrito.js"></script>
+</body>
+</html>

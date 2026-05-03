@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin · Barber O.R.Z Studio</title>
+    <link rel="icon" type="image/jpeg" href="../img/Barberia Logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="../img/Barberia Logo.jpeg" alt="Logo">
+        <span>Barber O.R.Z</span>
+    </a>
+    <span class="admin-badge">Panel Admin</span>
+    <button class="btn-cerrar" id="btnCerrar">Cerrar sesión</button>
+</nav>
+
+<main>
+
+    <!-- CABECERA -->
+    <div class="page-header">
+        <span class="section-label">Gestión</span>
+        <h1 class="page-title">Panel de Administración</h1>
+        <div class="section-line"></div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-icon">✂️</span>
+            <span class="stat-num" id="statCitas">–</span>
+            <span class="stat-label">Citas totales</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon">📦</span>
+            <span class="stat-num" id="statPedidos">–</span>
+            <span class="stat-label">Pedidos totales</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon">🧴</span>
+            <span class="stat-num" id="statProductos">–</span>
+            <span class="stat-label">Productos activos</span>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="cambiarTab('citas', this)">✂️ Citas</button>
+        <button class="tab" onclick="cambiarTab('pedidos', this)">📦 Pedidos</button>
+        <button class="tab" onclick="cambiarTab('productos', this)">🧴 Productos</button>
+    </div>
+
+    <!-- TAB: CITAS -->
+    <div class="tab-content" id="tab-citas">
+        <div class="tab-header">
+            <h2 class="tab-title">Todas las Citas</h2>
+            <select id="filtroCitas" onchange="cargarCitas()">
+                <option value="">Todas</option>
+                <option value="pendiente">Pendientes</option>
+                <option value="confirmada">Confirmadas</option>
+                <option value="completada">Completadas</option>
+                <option value="cancelada">Canceladas</option>
+            </select>
+        </div>
+        <div id="listaCitas"><div class="loading">Cargando...</div></div>
+    </div>
+
+    <!-- TAB: PEDIDOS -->
+    <div class="tab-content hidden" id="tab-pedidos">
+        <div class="tab-header">
+            <h2 class="tab-title">Todos los Pedidos</h2>
+        </div>
+        <div id="listaPedidos"><div class="loading">Cargando...</div></div>
+    </div>
+
+    <!-- TAB: PRODUCTOS -->
+    <div class="tab-content hidden" id="tab-productos">
+        <div class="tab-header">
+            <h2 class="tab-title">Productos</h2>
+            <button class="btn-nuevo" onclick="abrirModalProducto()">+ Nuevo producto</button>
+        </div>
+        <div id="listaProductos"><div class="loading">Cargando...</div></div>
+    </div>
+
+</main>
+
+<!-- MODAL PRODUCTO -->
+<div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <h2 class="modal-title" id="modalTitle">Nuevo Producto</h2>
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="prodNombre" placeholder="Nombre del producto">
+        </div>
+        <div class="form-group">
+            <label>Descripción</label>
+            <input type="text" id="prodDesc" placeholder="Descripción">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Precio (€)</label>
+                <input type="number" id="prodPrecio" placeholder="0.00" step="0.01">
+            </div>
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" id="prodStock" placeholder="0">
+            </div>
+        </div>
+
+        <div class="msg error"   id="modalError"></div>
+        <div class="msg success" id="modalSuccess"></div>
+
+        <div class="modal-btns">
+            <button class="btn-cancelar-modal" onclick="cerrarModal()">Cancelar</button>
+            <button class="btn-guardar" onclick="guardarProducto()">Guardar</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>

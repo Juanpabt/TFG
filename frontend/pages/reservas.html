@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita · Barber O.R.Z Studio</title>
+    <link rel="icon" type="image/jpeg" href="../img/Barberia Logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reservas.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="../img/Barberia Logo.jpeg" alt="Logo">
+        <span>Barber O.R.Z</span>
+    </a>
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+</nav>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+
+    <!-- CABECERA -->
+    <div class="page-header">
+        <span class="section-label">Tu momento</span>
+        <h1 class="page-title">Reservar Cita</h1>
+        <div class="section-line"></div>
+        <p class="page-desc">Elige el servicio, el día y la hora que mejor te venga.</p>
+    </div>
+
+    <!-- PASOS -->
+    <div class="steps">
+        <div class="step active" id="step1-indicator">
+            <div class="step-num">1</div>
+            <span>Servicio</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step2-indicator">
+            <div class="step-num">2</div>
+            <span>Fecha y hora</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step3-indicator">
+            <div class="step-num">3</div>
+            <span>Confirmar</span>
+        </div>
+    </div>
+
+    <!-- PASO 1: ELEGIR SERVICIO -->
+    <div class="step-content" id="step1">
+        <h2 class="step-title">¿Qué servicio quieres?</h2>
+        <div class="servicios-grid" id="serviciosGrid">
+            <!-- Se cargan desde la API -->
+        </div>
+    </div>
+
+    <!-- PASO 2: ELEGIR FECHA Y HORA -->
+    <div class="step-content hidden" id="step2">
+        <h2 class="step-title">¿Cuándo quieres venir?</h2>
+        <div class="datetime-grid">
+            <div class="fecha-wrap">
+                <label>Selecciona el día</label>
+                <input type="date" id="fechaCita">
+            </div>
+            <div class="horas-wrap">
+                <label>Selecciona la hora</label>
+                <div class="horas-grid" id="horasGrid">
+                    <!-- Se generan dinámicamente -->
+                </div>
+            </div>
+        </div>
+        <div class="step-btns">
+            <button class="btn-back" id="btnBack1">← Volver</button>
+            <button class="btn-next" id="btnNext2" disabled>Siguiente →</button>
+        </div>
+    </div>
+
+    <!-- PASO 3: CONFIRMAR -->
+    <div class="step-content hidden" id="step3">
+        <h2 class="step-title">Confirma tu reserva</h2>
+        <div class="resumen-card">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+            <div class="resumen-row">
+                <span class="resumen-label">Servicio</span>
+                <span class="resumen-valor" id="resumenServicio">-</span>
+            </div>
+            <div class="resumen-row">
+                <span class="resumen-label">Fecha</span>
+                <span class="resumen-valor" id="resumenFecha">-</span>
+            </div>
+            <div class="resumen-row">
+                <span class="resumen-label">Hora</span>
+                <span class="resumen-valor" id="resumenHora">-</span>
+            </div>
+            <div class="resumen-row">
+                <span class="resumen-label">Duración</span>
+                <span class="resumen-valor" id="resumenDuracion">-</span>
+            </div>
+            <div class="resumen-row resumen-total">
+                <span class="resumen-label">Precio</span>
+                <span class="resumen-valor" id="resumenPrecio">-</span>
+            </div>
+        </div>
+
+        <div class="msg error"   id="errorMsg"></div>
+        <div class="msg success" id="successMsg"></div>
+
+        <div class="step-btns">
+            <button class="btn-back" id="btnBack2">← Volver</button>
+            <button class="btn-confirmar" id="btnConfirmar">✓ Confirmar cita</button>
+        </div>
+    </div>
+
+</main>
+
+<script src="../js/reservas.js"></script>
+</body>
+</html>

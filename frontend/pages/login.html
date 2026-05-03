@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión · Barber O.R.Z Studio</title>
+    <link rel="icon" type="image/jpeg" href="../img/Barberia Logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<a href="index.html" class="back-link">← Inicio</a>
+
+<div class="card">
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="card-header">
+        <img src="../img/Barberia Logo.jpeg" alt="Logo">
+        <h1>Barber O.R.Z</h1>
+        <p>Studio · Acceso privado</p>
+    </div>
+
+    <div class="card-body">
+        <div class="msg error"   id="errorMsg"></div>
+        <div class="msg success" id="successMsg"></div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <div class="input-wrap">
+                <span>✉</span>
+                <input type="email" id="email" placeholder="tu@email.com">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <div class="input-wrap">
+                <span>🔒</span>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+        </div>
+
+        <button class="btn-login" id="btnLogin">Entrar al Studio</button>
+
+        <div class="divider"><span>¿Primera vez?</span></div>
+
+        <div class="card-footer">
+            ¿No tienes cuenta? <a href="registro.html">Regístrate gratis</a>
+        </div>
+    </div>
+</div>
+
+<script src="../js/login.js"></script>
+</body>
+</html>

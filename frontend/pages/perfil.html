@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta · Barber O.R.Z Studio</title>
+    <link rel="icon" type="image/jpeg" href="../img/Barberia Logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="../img/Barberia Logo.jpeg" alt="Logo">
+        <span>Barber O.R.Z</span>
+    </a>
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+</nav>
+
+<main>
+
+    <!-- CABECERA PERFIL -->
+    <div class="perfil-header">
+        <div class="perfil-avatar">👤</div>
+        <div class="perfil-info">
+            <span class="section-label">Mi cuenta</span>
+            <h1 class="perfil-nombre" id="perfilNombre">Cargando...</h1>
+            <p class="perfil-email" id="perfilEmail"></p>
+        </div>
+        <button class="btn-cerrar" id="btnCerrar">Cerrar sesión</button>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="cambiarTab('citas', this)">✂️ Mis Citas</button>
+        <button class="tab" onclick="cambiarTab('pedidos', this)">📦 Mis Pedidos</button>
+    </div>
+
+    <!-- TAB: CITAS -->
+    <div class="tab-content" id="tab-citas">
+        <div class="tab-header">
+            <h2 class="tab-title">Mis Citas</h2>
+            <a href="reservas.html" class="btn-nuevo">+ Nueva cita</a>
+        </div>
+        <div id="listaCitas">
+            <div class="loading">Cargando citas...</div>
+        </div>
+    </div>
+
+    <!-- TAB: PEDIDOS -->
+    <div class="tab-content hidden" id="tab-pedidos">
+        <div class="tab-header">
+            <h2 class="tab-title">Mis Pedidos</h2>
+            <a href="index.html#productos" class="btn-nuevo">+ Comprar más</a>
+        </div>
+        <div id="listaPedidos">
+            <div class="loading">Cargando pedidos...</div>
+        </div>
+    </div>
+
+</main>
+
+<script src="../js/perfil.js"></script>
+</body>
+</html>
